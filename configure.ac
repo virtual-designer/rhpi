@@ -2,7 +2,7 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ([2.72])
-AC_INIT([package-installer], [1.0.0], [rakinar2@onesoftnet.eu.org])
+AC_INIT([redhat-package-installer], [1.0.0], [rakinar2@onesoftnet.eu.org])
 AC_CONFIG_AUX_DIR([build-aux])
 AM_SILENT_RULES([yes])
 AM_INIT_AUTOMAKE([gnu])

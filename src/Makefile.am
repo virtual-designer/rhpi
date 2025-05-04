@@ -1,5 +1,5 @@
 bin_PROGRAMS = rhpi
-rhpi_SOURCES = main.c installer.c rpm.c rhpi.gresource.c
+rhpi_SOURCES = main.c installer.c rpm.c rhpi.gresource.c installer.h resource.h rpm.h
 
 rhpi_CFLAGS = $(GTK_CFLAGS) $(LIBADWAITA_CFLAGS) $(POLKIT_CFLAGS)
 rhpi_LDADD = $(GTK_LIBS) $(LIBADWAITA_LIBS) $(POLKIT_LIBS)
