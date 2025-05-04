@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Package Installer
+Comment=Red Hat Package Installer
+Exec=rhpi %f
+Terminal=false
+Type=Application
+Categories=Utility;
+StartupNotify=true
+NoDisplay=true
+MimeType=application/x-rpm;

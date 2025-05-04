@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <template class="PackageInstallerWindow">
+    <property name="title">Package Installer</property>
+    <property name="default-width">400</property>
+    <property name="default-height">485</property>
+    <property name="child">
+      <object class="GtkScrolledWindow" id="scrolled_window">
+        <property name="hscrollbar_policy">never</property>
+        <property name="vscrollbar_policy">automatic</property>
+        <child>
+          <object class="AdwClamp">
+            <property name="maximum-size">400</property>
+            <property name="tightening-threshold">200</property>
+            <property name="child">
+              <object class="GtkBox">
+                <property name="orientation">vertical</property>
+                <property name="margin-top">24</property>
+                <property name="margin-bottom">15</property>
+                <property name="margin-start">12</property>
+                <property name="margin-end">12</property>
+
+                <child>
+                  <object class="GtkImage" id="icon_picture">
+                    <property name="icon-name">package-x-generic</property>
+                    <property name="pixel-size">100</property>
+                    <property name="margin-bottom">30</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="package_name_label">
+                    <property name="label">...</property>
+                    <property name="halign">center</property>
+                    <property name="name">package_name</property>
+                    <property name="margin-bottom">5</property>
+                    <property name="single-line-mode">false</property>
+                    <property name="wrap">true</property>
+                    <property name="justify">center</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="package_file_name_label">
+                    <property name="label">...</property>
+                    <property name="halign">center</property>
+                    <property name="name">package_file_name</property>
+                    <property name="single-line-mode">false</property>
+                    <property name="wrap">true</property>
+                    <property name="justify">center</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="package_summary_label">
+                    <property name="label">...</property>
+                    <property name="halign">center</property>
+                    <property name="name">package_summary</property>
+                    <property name="margin-top">20</property>
+                    <property name="single-line-mode">false</property>
+                    <property name="wrap">true</property>
+                    <property name="justify">center</property>
+                  </object>
+                </child>
+
+                <child>
+                  <object class="GtkBox" id="progress_container">
+                    <property name="visible">false</property>
+                    <property name="orientation">vertical</property>
+                    <property name="margin-top">80</property>
+
+                    <child>
+                      <object class="GtkProgressBar" id="progress">
+                        <property name="text">Installing</property>
+                        <property name="show-text">true</property>
+                      </object>
+                    </child>
+
+                    <child>
+                      <object class="GtkButton" id="done_button">
+                        <property name="margin-top">55</property>
+                        <property name="label">Done</property>
+                        <property name="css-classes">suggested-action</property>
+                        <property name="visible">false</property>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+
+                <child>
+                  <object class="GtkBox" id="error_container">
+                    <property name="visible">false</property>
+                    <property name="orientation">horizontal</property>
+                    <property name="margin-top">80</property>
+                    <property name="margin-bottom">30</property>
+                    <property name="spacing">10</property>
+                    <property name="halign">center</property>
+
+                    <child>
+                      <object class="GtkImage" id="error_icon">
+                        <property name="icon-name">dialog-warning</property>
+                        <property name="pixel-size">30</property>
+                      </object>
+                    </child>
+
+                    <child>
+                      <object class="GtkLabel" id="error_label">
+                        <property name="label">...</property>
+                        <property name="halign">center</property>
+                        <property name="name">error_label</property>
+                        <property name="single-line-mode">false</property>
+                        <property name="wrap">true</property>
+                        <property name="justify">center</property>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+
+                <child>
+                  <object class="GtkListBox" id="package_info_list">
+                    <property name="css-classes">boxed-list</property>
+                    <property name="selection-mode">none</property>
+                    <property name="margin-top">30</property>
+
+                    <child>
+                      <object class="AdwExpanderRow">
+                        <property name="title">Details...</property>
+                        <property name="expanded">false</property>
+
+                        <child>
+                          <object class="AdwActionRow" id="package_version_row">
+                            <property name="title">Version</property>
+                            <property name="subtitle">...</property>
+                            <property name="subtitle-selectable">true</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="AdwActionRow" id="package_arch_row">
+                            <property name="title">Architecture</property>
+                            <property name="subtitle">...</property>
+                            <property name="subtitle-selectable">true</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="AdwActionRow" id="package_size_row">
+                            <property name="title">Size</property>
+                            <property name="subtitle">...</property>
+                            <property name="subtitle-selectable">true</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="AdwActionRow" id="package_vendor_row">
+                            <property name="title">Vendor</property>
+                            <property name="subtitle">...</property>
+                            <property name="subtitle-selectable">true</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="AdwActionRow" id="package_build_date_row">
+                            <property name="title">Build Date</property>
+                            <property name="subtitle">...</property>
+                            <property name="subtitle-selectable">true</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="AdwActionRow" id="package_build_host_row">
+                            <property name="title">Build Host</property>
+                            <property name="subtitle">...</property>
+                            <property name="subtitle-selectable">true</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="AdwActionRow" id="package_packager_row">
+                            <property name="title">Packager</property>
+                            <property name="subtitle">...</property>
+                            <property name="subtitle-selectable">true</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="AdwActionRow" id="package_license_row">
+                            <property name="title">License</property>
+                            <property name="subtitle">...</property>
+                            <property name="subtitle-selectable">true</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="AdwActionRow" id="package_url_row">
+                            <property name="title">URL</property>
+                            <property name="subtitle">...</property>
+                            <property name="subtitle-selectable">true</property>
+                          </object>
+                        </child>
+
+                        <child>
+                          <object class="AdwActionRow" id="package_bug_report_url_row">
+                            <property name="title">Bug Report URL</property>
+                            <property name="subtitle">...</property>
+                            <property name="subtitle-selectable">true</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="AdwActionRow" id="package_description_row">
+                            <property name="title">Detailed Description</property>
+                            <property name="subtitle">...</property>
+                            <property name="subtitle-selectable">true</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+
+
+                  </object>
+                </child>
+
+                <child>
+                  <object class="GtkBox">
+                    <property name="orientation">vertical</property>
+                    <property name="margin-top">30</property>
+                    <property name="margin-bottom">0</property>
+                    <child>
+                      <object class="GtkButton" id="install_button">
+                        <property name="label">Install</property>
+                        <property name="css-classes">suggested-action</property>
+                        <property name="name">install_button</property>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </property>
+          </object>
+        </child>
+      </object>
+    </property>
+  </template>
+</interface>

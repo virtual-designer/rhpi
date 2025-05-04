@@ -1,0 +1,9 @@
+* Red Hat Package Installer (RHPI)
+
+RHPI is a simple GUI package installer that can open .rpm files and install them in a few clicks.
+
+** Requirements:
+
++ RPM (to open .rpm files)
+* DNF (to install .rpm files and resolve dependencies)
+* Polkit (to request superuser permissions)
